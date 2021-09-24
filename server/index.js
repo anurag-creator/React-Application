@@ -1,6 +1,7 @@
 const express = require('express');
 const socketio = require('socket.io');
 const http = require('http');
+const cors = require('cors');
 
 const PORT = process.env.PORT || 5000;
 const router = require('./router');
@@ -17,7 +18,7 @@ io.on('connection', (socket) => {
         console.log('User had left');
     })
 })
-
+app.use(cors());
 app.use(router);
 server.listen(PORT, () => {
     console.log(`Server is up and running on port ${PORT}`);
