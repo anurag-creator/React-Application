@@ -12,14 +12,18 @@ const server = http.createServer(app);
 const io = socketio(server);
 
 io.on('connection', (socket) => {
-    console.log('We have a new Connection', socket.id);
+  console.log('We have a new Connection', socket.id);
 
-    socket.on('disconnect', () => {
-        console.log('User had left');
-    })
-})
+  socket.on('join', ({ name, room }, callback) => {
+    console.log(name, room);
+  });
+
+  socket.on('disconnect', () => {
+    console.log('User had left');
+  });
+});
 app.use(cors());
 app.use(router);
 server.listen(PORT, () => {
-    console.log(`Server is up and running on port ${PORT}`);
-})
+  console.log(`Server is up and running on port ${PORT}`);
+});
