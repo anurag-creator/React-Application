@@ -10,12 +10,12 @@ const Chat = ({ location }) => {
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
 
+    let socket = io(ENDPOINT, { transports: ['websocket'] });
+    //   console.log(socket);
     setName(name);
     setRoom(room);
-
-    let socket = io(ENDPOINT, { transports: ['websocket'] });
-      console.log(socket);
-  });
+      socket.emit('join', { name, room });
+  }, [ENDPOINT, location.search]);
   return <h1>Chat</h1>;
 };
 
