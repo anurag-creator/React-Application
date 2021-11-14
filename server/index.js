@@ -3,6 +3,8 @@ const socketio = require('socket.io');
 const http = require('http');
 const cors = require('cors');
 
+const { addUser, getUser, removeUser, getUserInRoom } = require('./users');
+
 const PORT = process.env.PORT || 5000;
 const router = require('./router');
 
@@ -12,10 +14,14 @@ const server = http.createServer(app);
 const io = socketio(server);
 
 io.on('connection', (socket) => {
-  console.log('We have a new Connection', socket.id);
-
+  // console.log('We have a new Connection', socket.id);
   socket.on('join', ({ name, room }, callback) => {
-    console.log(name, room);
+    // console.log(name, room);
+    const { error, user } = addUser({ id: socket.id, name, room });
+    if (error) {
+      return callback(error);
+    }
+    socket.join(user.room);
   });
 
   socket.on('disconnect', () => {
