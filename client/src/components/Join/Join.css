@@ -18,7 +18,7 @@ html, body {
   text-align: center;
   height: 100vh;
   align-items: center;
-  background-color: #1A1A1D;
+  background-color: #1F1D36;
 }
 
 .joinInnerContainer {
@@ -36,10 +36,12 @@ html, body {
   font-size: 2.5em;
   padding-bottom: 10px;
   border-bottom: 2px solid white;
+  font-family: 'Times New Roman', Times, serif;
+
 }
 
 .button {
-    color: #fff !important;
+    color: #fff ;
     text-transform: uppercase;
     text-decoration: none;
     background: #2979FF;
@@ -48,6 +50,10 @@ html, body {
     display: inline-block;
     border: none;
     width: 100%;
+}
+.button:hover{
+  color: black;
+  background-color: white;
 }
 
 .mt-20 {
