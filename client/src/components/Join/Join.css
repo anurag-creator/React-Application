@@ -18,7 +18,7 @@ html, body {
   text-align: center;
   height: 100vh;
   align-items: center;
-  background-color: #1F1D36;
+  background-color: #d2d0e6;
 }
 
 .joinInnerContainer {
@@ -26,16 +26,18 @@ html, body {
 }
 
 .joinInput {
-  border-radius: 0;
   padding: 15px 20px;
   width: 100%;
+  border: none;
+  border-radius: 8px;
+
 }
 
 .heading {
-  color: white;
+  color: black;
   font-size: 2.5em;
   padding-bottom: 10px;
-  border-bottom: 2px solid white;
+  /* border-bottom: 2px solid white; */
   font-family: 'Times New Roman', Times, serif;
 
 }
@@ -44,16 +46,19 @@ html, body {
     color: #fff ;
     text-transform: uppercase;
     text-decoration: none;
-    background: #2979FF;
+    background: #79018C;
     padding: 20px;
     border-radius: 5px;
     display: inline-block;
     border: none;
     width: 100%;
+    border: 2px solid white;
 }
 .button:hover{
   color: black;
   background-color: white;
+  border: 2px solid black;
+
 }
 
 .mt-20 {
